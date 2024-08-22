@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base-container {
+  @apply w-screen h-screen flex flex-col flex-grow;
+}
+
+.logo {
+  @apply w-32 h-full;
+}
+
+.main {
+  @apply bg-blue-800 w-svw h-svh flex flex-col;
+  background-color: #165c7d;
+}
+
+.home-nav {
+  @apply flex justify-between items-center max-h-16;
+}
+
+.home-container {
+  @apply p-20 w-full h-full flex flex-grow text-white justify-between;
+}
+
+.white-btn {
+  @apply bg-white min-w-32 rounded-md p-1;
+  color: #165c7d;
+}
+
+.custom-blue-btn {
+  @apply text-white rounded-md px-2 py-1 border-2 border-white min-w-24;
+  background-color: #165c7d;
+}
+
+.nav-login {
+  @apply w-full h-16 flex justify-center;
+  background-color: #165c7d;
+}
+
+.nav-login-container {
+  @apply flex justify-between items-center w-10/12 h-full;
+}
+
+.auth-container {
+  @apply h-full w-full flex justify-center;
+  background-color: #f3f4f6;
+}
+
+.auth-main {
+  @apply w-10/12 flex;
+}
+
+.input-box {
+  @apply w-full h-8 rounded-md p-1 focus:bg-white;
+  background-color: #f3f4f6;
+}
+
+.input-dropdown {
+  @apply w-full h-8 rounded-md p-1 bg-white border-2 border-gray-100;
+}
+
+.input-submit {
+  @apply w-full rounded-lg p-1 text-white text-sm;
+  background-color: #165c7d;
+}
