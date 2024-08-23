@@ -7,12 +7,12 @@ class AuthController {
         try {
             const { email, password } = req.body
             if (!email || !password) {
-                throw { name: 'BadRequest', message: 'Email and password are required' }
+                throw { status: 400, message: 'All field required' }
             }
 
             const company = await Company.findOne({ where: { email } })
 
-            if (!company || !compare(password, company.password)) throw { name: 'BadRequest', message: 'Invalid email or password' }
+            if (!company || !compare(password, company.password)) throw { status: 400, message: 'Invalid email or password' }
 
             const token = signToken({
                 id: company.id,
@@ -30,7 +30,7 @@ class AuthController {
         try {
             const { email, password, name, industry, companySize, phoneCompany, position, fullName, phoneNumber } = req.body
 
-            if (!email || !password || !name || !industry || !companySize || !phoneCompany || !position || !fullName || !phoneNumber) throw { name: 'BadRequest', message: 'All fields are required' }
+            if (!email || !password || !name || !industry || !companySize || !phoneCompany || !position || !fullName || !phoneNumber) throw { status: 400, message: 'All field required' }
             const hashedPassword = hash(password)
             await Company.create({
                 email, password: hashedPassword, name, industry, companySize, phoneCompany, position, fullName, phoneNumber

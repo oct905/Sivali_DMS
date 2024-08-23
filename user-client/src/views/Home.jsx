@@ -51,8 +51,9 @@ const HomePage = () => {
             <span className="underline"> license agreement</span>
           </span>
         </div>
-
-        <img className="w-1/3" src={fill} alt="" />
+        <div className="w-2/3 h-full flex justify-center items-center">
+          <img className="max-w-96" src={fill} alt="" />
+        </div>
       </div>
     </div>
   );

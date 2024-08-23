@@ -48,8 +48,10 @@ module.exports = (sequelize, DataTypes) => {
         notNull: {
           msg: "Mandatory location is required"
         },
-        notEmpty: {
-          msg: "Mandatory location is required"
+        isBoolean(value) {
+          if (typeof value !== 'boolean') {
+            throw { message: "Mandatory location must be boolean" };
+          }
         }
       }
     },
