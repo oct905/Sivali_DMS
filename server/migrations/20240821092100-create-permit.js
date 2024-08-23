@@ -2,27 +2,39 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('AttendanceTypes', {
+    await queryInterface.createTable('Permits', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      fullName: {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
           notNull: {
-            msg: "Name is required"
+            msg: "Full name is required"
           },
           notEmpty: {
-            msg: "Name is required"
+            msg: "Full name is required"
+          }
+        }
+      },
+      date: {
+        type: Sequelize.DATEONLY,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Date is required"
+          },
+          notEmpty: {
+            msg: "Date is required"
           }
         }
       },
       description: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
           notNull: {
@@ -33,23 +45,33 @@ module.exports = {
           }
         }
       },
-      mandatoryLocation: {
-        type: Sequelize.BOOLEAN,
+      created: {
+        type: Sequelize.DATEONLY,
         allowNull: false,
         validate: {
           notNull: {
-            msg: "Mandatory location is required"
+            msg: "Created date is required"
           },
           notEmpty: {
-            msg: "Mandatory location is required"
+            msg: "Created date is required"
+          }
+        }
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Status is required"
+          },
+          notEmpty: {
+            msg: "Status is required"
           }
         }
       },
       CompanyId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
         validate: {
           notNull: {
             msg: "Company ID is required"
@@ -61,7 +83,7 @@ module.exports = {
         references: {
           model: 'Companies',
           key: 'id'
-        }
+        },
       },
       createdAt: {
         allowNull: false,
@@ -74,6 +96,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('AttendanceTypes');
+    await queryInterface.dropTable('Permits');
   }
 };

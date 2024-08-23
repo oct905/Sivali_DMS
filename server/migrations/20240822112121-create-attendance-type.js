@@ -12,7 +12,6 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
         validate: {
           notNull: {
             msg: "Name is required"
