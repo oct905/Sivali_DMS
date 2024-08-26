@@ -11,8 +11,12 @@ const LoginNavbar = () => {
           <span className="text-white text-sm flex gap-2">
             <a href="">Company</a> | <a href="/">Jobseekers</a>
           </span>
-          <button className="custom-blue-btn">Sign Up</button>
-          <button className="custom-blue-btn">Sign In</button>
+          <a href="/FormSignUpClient" className="custom-blue-btn">
+            Sign Up
+          </a>
+          <a href="/FormLoginClient" className="custom-blue-btn">
+            Sign In
+          </a>
         </div>
       </div>
     </nav>

@@ -47,10 +47,10 @@ class OvertimeController {
         try {
             const { id, fullName, date, hour, description, created, status } = req.body;
             const CompanyId = req.loginInfo.id;
-            if (!id || !fullName || !date || !hour || !description || !created || !status) throw { name: "BadRequest" };
+            if (!id || !fullName || !date || !hour || !description || !created || !status) throw { status: 400, message: "All Field Required" };
 
             const overtime = await Overtime.findOne({ where: { id, CompanyId } });
-            if (!overtime) throw { name: "NotFound" };
+            if (!overtime) throw { status: 404, message: "Data Not Found" };
 
             await Overtime.update(
                 { fullName, date, hour, description, created, status },

@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import LoginNavbar from "../../components/LoginNavbar";
+import CompanyNavbar from "../../components/CompanyNavbar";
 
 const BaseLayout = () => {
   return (
     <div className="base-container">
-      <LoginNavbar />
+      <CompanyNavbar />
       <Outlet />
     </div>
   );

@@ -35,9 +35,9 @@ const router = createBrowserRouter([
   {
     element: <BaseLayout />,
     loader: () => {
-      if (!localStorage.token) {
-        return redirect("/FormLoginClient");
-      }
+      // if (!localStorage.token) {
+      //   return redirect("/FormLoginClient");
+      // }
       return null;
     },
     children: [

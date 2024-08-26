@@ -30,7 +30,9 @@ class AuthController {
         try {
             const { email, password, name, industry, companySize, phoneCompany, position, fullName, phoneNumber } = req.body
 
+
             if (!email || !password || !name || !industry || !companySize || !phoneCompany || !position || !fullName || !phoneNumber) throw { status: 400, message: 'All field required' }
+
             const hashedPassword = hash(password)
             await Company.create({
                 email, password: hashedPassword, name, industry, companySize, phoneCompany, position, fullName, phoneNumber

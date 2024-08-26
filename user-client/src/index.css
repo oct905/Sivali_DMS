@@ -29,7 +29,7 @@
 }
 
 .custom-blue-btn {
-  @apply text-white rounded-md px-2 py-1 border-2 border-white min-w-24;
+  @apply text-white rounded-md px-2 py-1 border-2 border-white min-w-24 text-center;
   background-color: #165c7d;
 }
 
@@ -63,4 +63,50 @@
 .input-submit {
   @apply w-full rounded-lg p-1 text-white text-sm;
   background-color: #165c7d;
+}
+
+/* Dashboard */
+
+.dashboard-header {
+  @apply bg-[#1e6d8c] text-white p-4;
+}
+
+.nav-link {
+  @apply hover:underline;
+}
+
+.icon-button {
+  @apply p-2 rounded-full hover:bg-blue-700;
+}
+
+.dashboard-card {
+  @apply rounded-lg shadow p-6 flex flex-col items-center justify-center;
+}
+
+.buy-credit-card {
+  @apply bg-[#1e6d8c] text-white;
+}
+
+.history-transaction-card {
+  @apply bg-green-500 text-white;
+}
+
+.list-candidate-card {
+  @apply bg-yellow-500 text-white;
+}
+
+.find-candidates-button {
+  @apply bg-[#1e6d8c] text-white px-4 py-2 rounded hover:bg-blue-700;
+}
+
+.buy-packaged-button {
+  @apply w-full bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600;
+}
+
+.dropdown-menu {
+  @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-20;
+}
+
+.dropdown-item {
+  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100;
 }

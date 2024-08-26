@@ -1,7 +1,14 @@
 
 const errorHandler = (error, req, res, next) => {
     let status = error.status || 500
-    let message = error.message || `Internal Server Error`
+    let message
+
+    if (status === 500) {
+        message = `Internal Server Error`
+    } else {
+        message = error.message || `Internal Server Error`
+
+    }
 
     if (error.errors) {
         const errors = error?.errors[0]

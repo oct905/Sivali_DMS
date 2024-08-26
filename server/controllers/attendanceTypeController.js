@@ -65,10 +65,10 @@ class AttendanceTypeController {
     static async delete(req, res, next) {
         try {
             const { id } = req.body;
-            if (!id) throw { status: 400, message: "Record id required" };
+            if (!id) throw { status: 400, message: "id required" };
 
             const done = await AttendanceType.destroy({ where: { id } });
-            if (done === 0) throw { status: 404, message: "Unable to delete: Record not found." };
+            if (done === 0) throw { status: 404, message: "Record not found." };
 
             res.status(200).json({ message: "Attendance Type deleted" });
         } catch (error) {
