@@ -2,15 +2,14 @@ if (process.env.NODE_ENV !== "production") {
     require("dotenv").config()
 }
 
+const cors = require("cors")
 const express = require('express');
-const bodyParser = require('body-parser');
 const router = require('./routers');
 const { limiter } = require("./utils/limiter");
-const cors = require('cors');
+
 const app = express();
 
-
-app.use(cors());
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 

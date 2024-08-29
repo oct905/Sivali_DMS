@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base-container {
+  @apply w-screen h-screen flex flex-col flex-grow;
+}
+
+.logo {
+  @apply w-32 h-full;
+}
+
+.main {
+  @apply bg-blue-800 w-screen h-screen flex flex-col;
+  background-color: #165c7d;
+}
+
+.home-nav {
+  @apply flex justify-between items-center max-h-16;
+}
+
+.home-container {
+  @apply p-6 md:p-20 w-full h-full flex flex-col md:flex-row flex-grow text-white justify-between;
+}
+
+.white-btn {
+  @apply bg-white min-w-32 w-full md:w-44 h-10 rounded-md p-1 border;
+  color: #165c7d;
+}
+
+.white-btn:hover {
+  @apply text-white;
+  background-color: #165c7d;
+}
+
+.custom-blue-btn {
+  @apply text-white rounded-md px-2 py-1 border-2 border-white w-full md:w-auto text-center;
+  background-color: #165c7d;
+}
+
+.custom-blue-btn:hover {
+  @apply bg-white text-[#165c7d];
+}
+
+.nav-login {
+  @apply w-full h-16 flex justify-center;
+  background-color: #165c7d;
+}
+
+.nav-login-container {
+  @apply flex justify-between items-center w-10/12 h-full;
+}
+
+.auth-container {
+  @apply h-full w-full flex justify-center;
+  background-color: #f3f4f6;
+}
+
+.auth-main {
+  @apply w-10/12 flex max-h-fit;
+}
+
+.input-box {
+  @apply w-full h-12 rounded-md p-1 bg-gray-200;
+}
+
+.input-box:focus {
+  @apply bg-white;
+}
+
+.input-dropdown {
+  @apply w-full h-12 rounded-md p-2 bg-white border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700;
+  appearance: none;
+  background-image: url('data:image/svg+xml,%3Csvg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M4 6l4 4 4-4" stroke="%234A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.25em;
+}
+
+.input-submit {
+  @apply w-full h-12 rounded-lg p-1 text-white text-sm border-2;
+  background-color: #165c7d;
+}
+
+.input-submit:hover {
+  @apply bg-white border-2;
+  border-color: #165c7d;
+  color: #165c7d;
+}
+
+.dashboard-header {
+  @apply bg-[#1e6d8c] text-white p-4;
+}
+
+.nav-link {
+  @apply hover:underline;
+}
+
+.icon-button {
+  @apply p-2 rounded-full hover:bg-blue-700;
+}
+
+.dashboard-card {
+  @apply rounded-lg shadow p-6 flex flex-col items-center justify-center;
+}
+
+.buy-credit-card {
+  @apply bg-[#1e6d8c] text-white;
+}
+
+.history-transaction-card {
+  @apply bg-green-500 text-white;
+}
+
+.list-candidate-card {
+  @apply bg-yellow-500 text-white;
+}
+
+.find-candidates-button {
+  @apply bg-[#1e6d8c] text-white px-4 py-2 rounded hover:bg-blue-700;
+}
+
+.buy-packaged-button {
+  @apply w-full bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600;
+}
+
+.dropdown-menu {
+  @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-20;
+}
+
+.dropdown-item {
+  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100;
+}
+
+.home-img-container {
+  @apply relative w-full;
+  color: #165c7d;
+}
+
+.home-img {
+  @apply w-full object-cover;
+  max-height: 250px;
+}
+
+.footer {
+  @apply bg-[#165c7d] p-6 text-white;
+}
+
+.footer a {
+  @apply text-white no-underline;
+}
+
+.footer a:hover {
+  @apply underline;
+}
+
+.footer .fab {
+  font-size: 1.5rem;
+}
+
+.footer-logo {
+  @apply flex items-center justify-center bg-white p-2.5 rounded-md;
+  width: 120px;
+}
+
+.hire-section {
+  @apply absolute top-1/2 left-5 bg-white p-8 rounded-lg max-w-xs text-left;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    @apply flex-col text-center;
+  }
+
+  .hire-section {
+    @apply static mt-4 mx-auto transform-none;
+  }
+
+  .white-btn {
+    @apply w-full text-sm;
+  }
+
+  .custom-blue-btn {
+    @apply w-full text-sm;
+  }
+
+  .home-img {
+    max-height: 150px;
+  }
+
+  .footer {
+    @apply flex-col text-center;
+  }
+
+  .footer-logo {
+    @apply mb-4;
+  }
+}

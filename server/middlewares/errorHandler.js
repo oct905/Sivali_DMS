@@ -1,22 +1,16 @@
 
 const errorHandler = (error, req, res, next) => {
-    let status = error.status || 500
-    let message
-
-    if (status === 500) {
-        message = `Internal Server Error`
-    } else {
-        message = error.message || `Internal Server Error`
-
+    let status = 500
+    let message = `Internal Server Error`
+    if (error.status) {
+        status = error.status
+        message = error.message
+    } else if (error.name === "SequelizeUniqueConstraintError") {
+        status = 400
+        message = error.message
     }
+    console.log(error, "error handler <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
-    if (error.errors) {
-        const errors = error?.errors[0]
-        console.log(errors, `<<< ERROR HANDLER`);
-
-        message = errors.message || message
-    }
-    console.log(message, `<<< ERROR HANDLER`);
     res.status(status).json({
         message
     })
